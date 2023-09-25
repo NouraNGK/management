@@ -1,1 +1,108 @@
-<p>add-product works!</p>
+<!-- <app-opening-word [openingWordInput]="word"></app-opening-word> -->
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7">
+                <form [formGroup]="productForm" class="billing-form">
+                    <h3 class="mb-4 billing-heading"> {{title}} <span style="color: orange;">Product</span></h3>
+                    <div style="border-bottom: 1px solid orange; margin-bottom: 20px;"></div>
+                    <div class="row align-items-end">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="productName">Product Name</label>
+                                <input type="text" id="productName" class="form-control" formControlName="productName"
+                                    placeholder="">
+                            </div>
+                            <div style="color: red;" *ngIf="productForm.controls['productName'].invalid && 
+                                    (productForm.controls['productName'].touched || 
+                                    productForm.controls['productName'].dirty)">
+                                <div *ngIf="productForm.controls['productName'].errors?.required">
+                                    Product Name is required
+                                </div>
+                                <div *ngIf="productForm.controls['productName'].errors?.minlength">
+                                    Product Name must have at least 3 chars
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="price">Price</label>
+                                <input type="number" id="price" class="form-control" formControlName="price"
+                                    placeholder="">
+                            </div>
+                            <div style="color: red;" *ngIf="productForm.controls['price'].invalid && 
+                                    (productForm.controls['price'].touched || 
+                                    productForm.controls['price'].dirty)">
+                                <div *ngIf="productForm.controls['price'].errors?.required">
+                                    Price is required
+                                </div>
+                                <div *ngIf="productForm.controls['price'].errors?.min">
+                                    The price must be given
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="stock">Stock</label>
+                                <input type="number" id="stock" class="form-control" formControlName="stock"
+                                    placeholder="">
+                            </div>
+                            <div style="color: red;" *ngIf="productForm.controls['stock'].invalid && 
+                                    (productForm.controls['stock'].touched || 
+                                    productForm.controls['stock'].dirty)">
+                                <div *ngIf="productForm.controls['stock'].errors?.required">
+                                    Quantity is required
+                                </div>
+                                <div *ngIf="productForm.controls['stock'].errors?.min">
+                                    Quantity must be more than 5
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <select class="form-control" formControlName="category">
+                                    <option value="">Select a Category *</option>
+                                    <option value="fruits">Fruits</option>
+                                    <option value="vegetables">Vegetables</option>
+                                    <option value="juices">Juices</option>
+                                    <option value="dried">Dried</option>
+                                </select>
+                            </div>
+                            <div style="color: red;" *ngIf="productForm.controls['category'].invalid && 
+                            productForm.controls['category'].touched">
+                                <div *ngIf="productForm.controls['category'].errors?.required">
+                                    Category is required
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group" style="visibility: hidden;">
+                                <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)">
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary py-3 px-4" (click)="filePicker.click()">
+                                    Select an image
+                                </button>
+                            </div>
+                            <div class="text-center mt-5">
+                                <img [src]="imagePreview ? imagePreview : (product && product.img ? product.img : '')"
+                                    alt="" width="200px">
+                            </div>
+                            <div class="text-center"
+                                *ngIf="productForm.get('img')?.touched && productForm.get('img')?.errors?.invalidFileType">
+                                <p style="color: red;">Invalid file type. Allowed types: PNG, JPG, JPEG.</p>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-12 text-center mt-4">
+                            <input type="submit" class="btn btn-primary py-3 px-4" (click)="validate()"
+                                [disabled]="productForm.invalid" [value]="title">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

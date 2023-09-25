@@ -1,1 +1,31 @@
-<p>all-invoices works!</p>
+<div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Date</th>
+          <th scope="col">Customer</th>
+          <th scope="col">Product</th>
+          <th scope="col">Unit Price</th>
+          <th scope="col">Qty</th>
+          <th scope="col">TOTAL</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i of invoicesTab">
+            <td>{{i._id}}</td>
+            <td>{{i.invoiceDate}}</td>
+            <td>{{i.customerName}}</td>
+            <td>{{i.productName}}</td>
+            <td>{{i.unitPrice}}</td>
+            <td>{{i.quantity}}</td>
+            <td>{{i.total}}</td>
+            <td>
+              <button class="btn btn-success" (click)="goToInfo(i._id)">Display</button>
+              <button class="btn btn-danger" (click)="delete(i._id)">Delete</button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>  

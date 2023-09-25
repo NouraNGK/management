@@ -1,1 +1,40 @@
-<p>search-product-by-name works!</p>
+<!-- <app-opening-word [openingWordInput]="word"></app-opening-word> -->
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7">
+                <form [formGroup]="searchForm" class="billing-form">
+                    <h3 class="mb-4 billing-heading">Search <span style="color: orange;">Product</span></h3>
+                    <div style="border-bottom: 1px solid orange; margin-bottom: 20px;"></div>
+                    <div class="row align-items-end">
+                        <div class="col-md-6 offset-md-3">
+                            <div class="form-group">
+                                <label for="productName">Product Name</label>
+                                <input type="text" id="productName" class="form-control" formControlName="productName"
+                                    placeholder="">
+                            </div>
+                            <div style="color: red;" *ngIf="searchForm.controls['productName'].invalid && 
+                                    (searchForm.controls['productName'].touched || 
+                                    searchForm.controls['productName'].dirty)">
+                                <div *ngIf="searchForm.controls['productName'].errors?.required">
+                                    Product Name is required
+                                </div>
+                                <div *ngIf="searchForm.controls['productName'].errors?.minlength">
+                                    Product Name must have at least 3 chars
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-12 text-center mt-4">
+                            <input type="submit" class="btn btn-primary py-3 px-4" (click)="search()" [disabled]="searchForm.invalid"
+                                value="Search">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5" *ngIf="findedProduct">
+            <app-one-product [productInput]="findedProduct"></app-one-product>
+        </div>
+    </div>
+</section>

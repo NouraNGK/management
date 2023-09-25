@@ -1,0 +1,61 @@
+.product {
+    width: 100%;
+    height: auto; /* La hauteur sera automatiquement ajustée en fonction du contenu */
+    margin: 10px; /* Ajouter un espace entre les produits et entre les lignes */
+    border: 1px solid #ccc; /* Ajouter une bordure pour séparer les produits */
+    border-radius: 5px; /* Ajouter des coins arrondis pour un look plus élégant */
+    padding: 10px; /* Ajouter un espace intérieur pour les éléments internes */
+    background-color: #fff; /* Fond blanc pour les produits */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Ajouter une ombre légère pour les produits */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajouter une ombre */
+    transition: box-shadow 0.3s ease; /* Ajouter une transition en douceur sur l'ombre */
+  }
+  
+  .product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée au survol */
+  }
+  
+  .product img {
+    width: 100%;
+    height: 200px; /* Définissez la hauteur souhaitée pour l'image */
+    object-fit: cover; /* Pour ajuster l'image tout en conservant l'aspect ratio */
+    border-radius: 5px 5px 0 0; /* Coins arrondis uniquement pour la partie supérieure de l'image */
+  }
+  
+  .product .text {
+    height: auto; /* La hauteur sera automatiquement ajustée en fonction du contenu */
+    display: flex;
+    flex-direction: column; /* Afficher le contenu en colonnes */
+    justify-content: space-between; /* Placer le nom et le prix avec de l'espace entre eux */
+    padding: 10px; /* Ajouter un espace intérieur pour les éléments internes */
+  }
+  
+  .product h3 {
+    font-size: 18px; /* Définissez la taille de police souhaitée pour le titre */
+    margin-bottom: 5px; /* Ajouter un espace en bas du titre */
+    color: #333; /* Couleur foncée pour le titre */
+  }
+  
+  .product .price {
+    font-size: 16px; /* Définissez la taille de police souhaitée pour le prix */
+    color: orange; /* Couleur orange pour le prix */
+  }
+  
+  .product .bottom-area {
+    height: 50px; /* Définissez la hauteur souhaitée pour la zone inférieure */
+    display: flex;
+    justify-content: center; /* Centrer horizontalement les éléments */
+    align-items: center; /* Centrer verticalement les éléments */
+  }
+  
+  .product .bottom-area a {
+    font-size: 24px; /* Définissez la taille de police souhaitée pour les icônes */
+    color: #fff; /* Couleur gris foncé pour les icônes */
+    margin: 0 5px; /* Ajouter un espace entre les icônes */
+    transition: color 0.3s; /* Ajouter une transition douce pour le changement de couleur des icônes au survol */
+  }
+  
+  .product .bottom-area a:hover {
+    color: orange;
+    /* color: #f57224; Couleur orange pour les icônes au survol */
+  }

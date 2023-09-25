@@ -1,1 +1,64 @@
-<p>login works!</p>
+<!-- <app-opening-word [openingWordInput]="word"></app-opening-word> -->
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7">
+                <form [formGroup]="loginForm" class="billing-form">
+                    <h3 class="mb-4 billing-heading">Log<span style="color: orange;">in</span></h3>
+                    <div style="border-bottom: 1px solid orange; margin-bottom: 20px;"></div>
+                    <div class="row align-items-end">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <span class="input-icon" (click)="focusInput('tel')"><i
+                                        class="fas fa-phone-alt"></i></span>
+                                <input type="tel" class="form-control" formControlName="tel" placeholder="" #telInput>
+                            </div>
+                            <div style="color: red;" *ngIf="loginForm.controls['tel'].invalid && 
+                                    (loginForm.controls['tel'].touched || 
+                                    loginForm.controls['tel'].dirty)">
+                                <div *ngIf="loginForm.controls['tel'].errors?.required">
+                                    Phone number is required
+                                </div>
+                                <div *ngIf="loginForm.controls['tel'].errors?.pattern">
+                                    Invalid phone number
+                                </div>
+                                <div *ngIf="loginForm.controls['tel'].errors?.minlength ||
+                                        loginForm.controls['tel'].errors?.maxlength">
+                                    You have to insert 8 numbers exactly
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <span class="input-icon" (click)="focusInput('pwd')"><i class="fas fa-key"></i></span>
+                                <input type="password" class="form-control" formControlName="pwd" placeholder=""
+                                    #pwdInput>
+                            </div>
+                            <div style="color: red;" *ngIf="loginForm.controls['pwd'].invalid && 
+                                    (loginForm.controls['pwd'].touched || 
+                                    loginForm.controls['pwd'].dirty)">
+                                <div *ngIf="loginForm.controls['pwd'].errors?.required">
+                                    Password is required
+                                </div>
+                                <div *ngIf="loginForm.controls['pwd'].errors?.pattern">
+                                    Password criteria: <br>
+                                    *Allowed characters: uppercase letters, lowercase letters, numbers, and
+                                    the
+                                    special characters `!`, `@`, `#`, `$`, `%`, `^`, `&`, `*` <br>
+                                    *Length of 6 to 12 characters
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-md-12 text-center mt-4">
+                            <input type="submit" class="btn btn-primary py-3 px-4" (click)="login()" [disabled]="loginForm.invalid"
+                                value="Login">
+                        </div>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="text-center mt-3" style="color: red;">{{errorMsg}}</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

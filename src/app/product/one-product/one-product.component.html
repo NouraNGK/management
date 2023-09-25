@@ -1,1 +1,31 @@
-<p>one-product works!</p>
+<div class="product">
+    <a href="#" class="img-prod"><img class="img-fluid" [src]="productInput.img" alt="Colorlib Template">
+        <div class="overlay"></div>
+    </a>
+    <div class="text py-3 pb-4 px-3 text-center">
+        <p style="text-transform: capitalize;"><a href="#">{{productInput.productName}}</a></p>
+        <div class="d-flex">
+            <div class="pricing">
+                <p class="price" [ngStyle]="{'color': priceColor(productInput.price)}">
+                    <span>{{productInput.price}} millimes</span>
+                </p>
+            </div>
+        </div>
+        <div class="bottom-area d-flex px-3">
+            <div class="m-auto d-flex">
+                <a class="add-to-cart d-flex justify-content-center align-items-center text-center" 
+                (click)="productInfo(productInput._id)">
+                    <span><i class="ion-ios-menu"></i></span>
+                </a>
+                <a class="buy-now d-flex justify-content-center align-items-center mx-1"
+                (click)="delete(productInput._id)">
+                    <span><i class="ion-ios-remove"></i></span>
+                </a>
+                <a class="heart d-flex justify-content-center align-items-center"
+                (click)="edit(productInput._id)">
+                    <span><i class="ion-ios-create"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
