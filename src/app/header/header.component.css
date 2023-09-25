@@ -1,0 +1,23 @@
+.vertical-line {
+    width: 1px;
+    height: 30px;
+    background-color: orange;
+    margin-top: 18px;
+    
+}
+
+.logout-btn:hover {
+    color: orange;
+}
+
+.nav-item .nav-link {
+    font-weight: bold !important;
+}
+
+.nav-item .nav-link:hover {
+    color: orange;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(252, 241, 221) !important;
+}
