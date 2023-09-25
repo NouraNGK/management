@@ -2,8 +2,8 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import jwt_decode from 'jwt-decode';
 import { Router } from '@angular/router';
-import { InvoiceService } from 'src/app/services/invoice.service';
 import Swal from 'sweetalert2';
+import { InvoiceService } from 'src/app/services/invoice.service';
 
 @Component({
   selector: 'app-add-invoice',
@@ -39,7 +39,7 @@ export class AddInvoiceComponent implements OnInit {
       this.invoiceService.addInvoiceObj(this.invoiceForm.value).subscribe((response) => {
         console.log("Here is the msg from the BE side:", response.msg);
         if (response.msg == "1") {
-          this.router.navigate(["all-invoices"]);
+          this.router.navigate(["invoice/all-invoices"]);
         } else {
           Swal.fire({
             icon: 'error',

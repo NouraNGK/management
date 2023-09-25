@@ -7,6 +7,8 @@ import { AllProductsComponent } from './all-products/all-products.component';
 import { OneProductComponent } from './one-product/one-product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SearchProductByNameComponent } from './search-product-by-name/search-product-by-name.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +21,10 @@ import { SearchProductByNameComponent } from './search-product-by-name/search-pr
   ],
   imports: [
     CommonModule,
-    ProductRoutingModule
+    ProductRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class ProductModule { }

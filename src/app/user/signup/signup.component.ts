@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { OpeningWordComponent } from '../../opening-word/opening-word.component';
 import { UserService } from 'src/app/services/user.service';
+// import { OpeningWordComponent } from '../../opening-word/opening-word.component';
 // import Swal from 'sweetalert2';
 
 @Component({

@@ -35,7 +35,7 @@ export class AllInvoicesComponent implements OnInit {
   }
 
   goToInfo(id: any) {
-    this.router.navigate([`one-invoice/${id}`]);
+    this.router.navigate([`invoice/one-invoice/${id}`]);
   }
 
   delete(id: any) {

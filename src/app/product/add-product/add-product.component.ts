@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from 'src/app/services/product.service';
 import Swal from 'sweetalert2';
 import jwt_decode from 'jwt-decode';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-add-product',
@@ -109,7 +109,7 @@ export class AddProductComponent implements OnInit {
               timer: 4000,
               showConfirmButton: false
             });
-            this.router.navigate(["all-products"]);
+            this.router.navigate(["product/all-products"]);
           } else {
             Swal.fire({
               icon: 'error',
@@ -126,7 +126,7 @@ export class AddProductComponent implements OnInit {
       this.productService.addObj(this.productForm.value, this.productForm.value.img).subscribe((response) => {
         console.log("Here is the msg from the BE side:", response.msg);
         if (response.msg == "1") {
-          this.router.navigate(["all-products"]);
+          this.router.navigate(["product/all-products"]);
         } else {
           Swal.fire({
             icon: 'error',

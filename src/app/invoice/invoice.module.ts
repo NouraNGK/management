@@ -5,6 +5,8 @@ import { InvoiceRoutingModule } from './invoice-routing.module';
 import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 import { AllInvoicesComponent } from './all-invoices/all-invoices.component';
 import { OneInvoiceComponent } from './one-invoice/one-invoice.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +17,10 @@ import { OneInvoiceComponent } from './one-invoice/one-invoice.component';
   ],
   imports: [
     CommonModule,
-    InvoiceRoutingModule
+    InvoiceRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class InvoiceModule { }

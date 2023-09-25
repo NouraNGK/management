@@ -13,13 +13,13 @@ export class OneProductComponent implements OnInit {
   productInput: any;
   
   constructor(private router: Router,
-    private productService:ProductService) { }
+    private productService: ProductService) { }
 
   ngOnInit(): void {
   }
 
   productInfo(id: any) {
-    this.router.navigate([`productInfo/${id}`]);
+    this.router.navigate([`product/productInfo/${id}`]);
   }
 
   delete(id: any) {
@@ -31,7 +31,7 @@ export class OneProductComponent implements OnInit {
   }
 
   edit(id: any) {
-    this.router.navigate([`edit/product/${id}`]);
+    this.router.navigate([`product/edit/product/${id}`]);
   }
 
   priceColor(price: any) {
