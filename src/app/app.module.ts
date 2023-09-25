@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { OpeningWordComponent } from './opening-word/opening-word.component';
+import { ConsonneMajPipe } from './pipes/consonne-maj.pipe';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { OpeningWordComponent } from './opening-word/opening-word.component';
     HeaderComponent,
     HomeComponent,
     FooterComponent,
-    OpeningWordComponent
+    OpeningWordComponent,
+    ConsonneMajPipe
   ],
   imports: [
     BrowserModule,
