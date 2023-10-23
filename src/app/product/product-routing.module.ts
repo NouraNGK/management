@@ -6,16 +6,11 @@ import { SearchProductByNameComponent } from './search-product-by-name/search-pr
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: 'add-product', component: AddProductComponent },
-      { path: 'all-products', component: AllProductsComponent },
-      { path: 'search', component: SearchProductByNameComponent },
-      { path: 'productInfo/:id', component: ProductDetailsComponent },
-      { path: 'edit/product/:id', component: AddProductComponent }
-    ],
-  },
+  { path: 'add-product', component: AddProductComponent },
+  { path: 'all-products', component: AllProductsComponent },
+  { path: 'search', component: SearchProductByNameComponent },
+  { path: 'productInfo/:id', component: ProductDetailsComponent },
+  { path: 'edit/product/:id', component: AddProductComponent }
 ];
 
 @NgModule({

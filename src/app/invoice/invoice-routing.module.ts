@@ -6,14 +6,9 @@ import { OneInvoiceComponent } from './one-invoice/one-invoice.component';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      { path: 'add-invoice', component: AddInvoiceComponent },
-      { path: 'all-invoices', component: AllInvoicesComponent },
-      { path: 'one-invoice/:id', component: OneInvoiceComponent }
-    ],
-  },
+  { path: 'add-invoice', component: AddInvoiceComponent },
+  { path: 'all-invoices', component: AllInvoicesComponent },
+  { path: 'one-invoice/:id', component: OneInvoiceComponent }
 ];
 
 @NgModule({
